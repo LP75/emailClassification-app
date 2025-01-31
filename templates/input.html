@@ -17,9 +17,9 @@
                 <button type="submit" class="btn btn-primary btn-block btn-large">Prédiction</button>
             </form>
             <br>
-            {% if resultat == 0 %}
+            {% if resultat == 1 %}
                 <b style="color: red;">SPAM</b>
-            {% elif resultat == 1 %}
+            {% elif resultat == 0 %}
                 <b style="color: green;">Non SPAM</b>
             {% endif %}
             <br>
