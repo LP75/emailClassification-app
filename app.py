@@ -25,7 +25,11 @@ def predict_api():
     email = data['email']
     tokenized_email = cv.transform([email])
     prediction = clf.predict(tokenized_email)
-    return jsonify(int(prediction[0]))
+    result = {
+        "prediction": int(prediction[0]),
+        "label": "spam" if prediction[0] == 1 else "non spam"
+    }
+    return jsonify(result)
 
 if __name__ == '__main__':
     app.run()
